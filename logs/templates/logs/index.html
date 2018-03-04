@@ -1,0 +1,7 @@
+<table>
+	<tr>
+		{% for name in data %}
+		<td><a href="/logs/{{name.id}}/">{{ name }}</a></td>
+		{% endfor %}
+	</tr>
+</table>
