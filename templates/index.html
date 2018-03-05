@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1 class="header">Нов Запис:</h1>
+<form method="post">
+    {% csrf_token %}
+    <table class="single_log">
+    {% for field in form %}
+    <tr>
+        <td style="width: 30%;">{{ field.label_tag }}</td>
+        <td style="width: 70%;">{{ field }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td><input type="submit" value="Submit" /></td>
+    </tr>
+    </table>
+</form>
+{% endblock %}

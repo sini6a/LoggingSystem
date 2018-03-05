@@ -1,4 +1,9 @@
-<table>
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1 class="header">{{ data.name }}</h1>
+<table class="single_log">
 	<tr>
 		<td>ID:</td>
 		<td>{{ data.id }}</td>
@@ -6,10 +11,6 @@
 	<tr>
 		<td>Дата:</td>
 		<td>{{ data.timestamp }}</td>
-	</tr>
-	<tr>
-		<td>Регистрација:</td>
-		<td>{{ data.name }}</td>
 	</tr>
 	<tr>
 		<td>Контакт телефон:</td>
@@ -32,3 +33,4 @@
 		<td>{{ data.description }}</td>
 	</tr>
 </table>
+{% endblock %}

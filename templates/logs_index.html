@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<h1 class="header">Сите записи:</h1>
+<table style="" class="logs_index">
+    {% for name in data %}
+    <tr>
+        <td><a href="/logs/{{name.id}}/">{{ name }} / {{ name.contact }}</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
