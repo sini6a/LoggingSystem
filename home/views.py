@@ -7,11 +7,13 @@ from logs.models import DataForm
 # Create your views here.
 def index(request):
 	template = loader.get_template('home/index.html')	
-	
+	user = request.user
 	if request.method == 'POST':
 		form = DataForm(request.POST)
+		form.data_owner = user
 		if form.is_valid():
-			return HttpResponseRedirect('submited')
+			form.save()
+			return render(request, 'home/submited.html')
 	else:
 		form = DataForm()
 	

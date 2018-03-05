@@ -24,7 +24,7 @@ class Data(models.Model):
 class DataForm(ModelForm):
 	class Meta:
 		model = Data
-		exclude = ['data_owner', 'timestamp']
+		exclude = ['timestamp']
 		labels = {
 			'name': _("Регистарски таблици:"),
 			'contact': _("Контакт телефон:"),
