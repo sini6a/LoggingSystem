@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="single_log">
+<ul>
+  <li>Nickname: {{ user.username }}</li>
+  <li>Корисник: {{ user.get_full_name }}</li>
+    <li>Име на фирма: {{ user.profile.company_name }}</li>
+    {% if user.profile.company_logo %}
+    <li>Лого: <a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}">{{ user.profile.company_logo }}</a></li>
+    {% endif %}
+    <li>Инфо: {{ user.profile.about_company }} </li>
+</ul>
+
+
+</div>
+<div class="columns">
+<a href="/update_profile">Ажурирај</a>
+</div>
+{% endblock %}

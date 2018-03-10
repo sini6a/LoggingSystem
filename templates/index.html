@@ -4,7 +4,7 @@
 {% block content %}
 
         <h1 class="header">Нов запис:</h1>
-        <form method="post" class="w3-container">
+        <form method="post" class="">
     {% csrf_token %}
     {% for field in form %}
         <label>{{ field.label_tag }}</label>
@@ -14,7 +14,7 @@
         {{ field.errors }}
         {% endif %}
     {% endfor %}
-        <input type="submit" value="Submit" />
+        <button value="Submit">Внеси</button>
 
 </form>
 {% endblock %}

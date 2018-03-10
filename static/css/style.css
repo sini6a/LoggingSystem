@@ -36,6 +36,17 @@ header {
     margin: 0 auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+
+}
+
+.settings-link {
+    transition: all 0.15s;
+}
+
+.settings-link:hover {
+color:#000;
+border-color:#000;
+background-color: #ddd;
 }
 
 h1, h2, h3 {
@@ -43,9 +54,6 @@ h1, h2, h3 {
     text-transform: uppercase;
 }
 
-input {
-width: 100%;
-}
 
 .w3-light-green,.w3-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}
 
@@ -104,7 +112,7 @@ background-color: #ddd;
 
 .columns {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(2, 1fr);
 }
 
 .columns a {
@@ -135,12 +143,21 @@ background-color: #ddd;
 padding: 0;
 }
 
+.logo {
+display:block;
+margin: auto;
+max-width: 100%;
+height: auto;
+max-height: 200px;
+padding: 10px;
+}
+
 .single_log li {
 background-color: #ddd;
 margin-bottom: 5px;
 list-style: none;
 border-radius:0.50em;
-text-align: center;
+text-align: left;
 padding: 10px;
 }
 
@@ -149,19 +166,64 @@ textarea{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;widt
 
 .w3-border{border:1px solid #ccc!important}
 
+button {
+text-decoration: none;
+text-transform: uppercase;
+overflow: auto;
+padding: 10px;
+margin: 2px;
+
+color: #fff;
+background-color:#333;
+text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+border:0.1em solid black;
+border-radius:0.12em;
+box-sizing: border-box;
+text-decoration:none;
+transition: all 0.15s;
+width: 100%;
+}
+
+button:hover {
+color:#000;
+border-color:#000;
+background-color: #ddd;
+}
+
 @media print {
-table {
+body {
+background: none;
+}
+header {
+width: 100%;
+max-height: 300px;
+}
+
+main {
+    padding: 0;
+    width: 100%;
+}
+
+.topnav {
+display:none;
+}
+
+main {
+box-shadow: none;
+}
+
+header {
+box-shadow: none;
+}
+
+.columns {
+display: none;
+}
+
+.single_log li {
 text-align: left;
+font-size: 20px;
 }
-
-.sidenav {
-display: none;
-}
-
-td a {
-display: none;
-}
-
 }
 
 @media screen and (max-width: 961px) {
@@ -177,6 +239,10 @@ main {
 .columns {
 display: grid;
 grid-template-columns: repeat(1, 1fr);
+}
+
+button {
+width: 100%;
 }
 
 }
