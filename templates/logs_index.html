@@ -3,15 +3,20 @@
 
 {% block content %}
 
-<h1 class="header">Сите записи:</h1>
-<table style="" class="logs_index">
-    {% for name in data %}
-    <tr>
-        <td><a href="/logs/{{name.id}}/">{{ name }} / {{ name.contact }}</a></td>
 
-    </tr>
-    {% endfor %}
-</table>
+{% csrf_token %}
+<script type="text/javascript">
+// using jQuery
+var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+</script>
 
+<h3 class="search">Пребарај:</h3>
+<input type="text" id="search" />
+
+<span class="logs_index">
+</span>
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/ajax.js' %}"></script>
 
 {% endblock %}

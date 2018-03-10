@@ -117,7 +117,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
@@ -130,3 +130,9 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'logs'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
+DATETIME_FORMAT = "d/m/Y G:i"
+
+CSRF_USE_SESSIONS = True

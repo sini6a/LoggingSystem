@@ -2,96 +2,241 @@
    
 * {
     font-family: 'Play', sans-serif;
+    box-sizing: border-box;
 }
 
-.header {
-    text-align: center;
-    padding: 10px;
+.anaglyph {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 50px/normal "Chau Philomene One", Helvetica, sans-serif;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: 3px;
+  text-shadow: -3px 0 1px rgb(30,242,241) , 3px 0 1px rgb(246,5,10) ;
+}
+
+.uppercase {
     text-transform: uppercase;
-    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.uppercase input {
+    text-transform: uppercase;
+}
+
+header {
+    background-color: #fff;
+    display:block;
+    overflow: auto;
+
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
-.header_main {
-    background: url("/static/images/banner.jpg");
-     background-position: bottom;
-     background-size: 50%;
-     height: 100%;
-     display:block;
-     overflow: auto;
-}
-
-.sidenav {
-
-}
-
-table {
-    width: 100%;
-    text-align:center;
-}
-
-.single_log td {
-    padding: 16px; 
-}
-
-.logs_index td {
-    padding: 5px;
-}
-
-.logs_index td a {
-    display: block; 
-    padding: 16px; 
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    background-color: #333;
-    color: white;
-    text-decoration:none;
+h1, h2, h3 {
+    text-align: center;
+    text-transform: uppercase;
 }
 
 input {
-    width: 100%;
+width: 100%;
 }
 
-textarea {
-    width: 100%;
-    height: 100px;
-    resize: none;
+.w3-light-green,.w3-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}
+
+main {
+width: 80%;
+height: 100%;
+margin: 0 auto;
+margin-top: 15px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+padding: 10px;
+overflow: auto;
+background-color: #fff;
 }
 
-.content {
-    padding: 20px;
+body {
+
+    background: url("/static/images/preview.jpg");
+    background-size: 50%;
+width: auto;
+margin: 0 auto;
+background-color: #fff;
 }
 
-.logs_index td a:hover {
-    
-    background-color: #111;
+.data {
+margin-bottom: 5px;
+width: 100%;
 }
 
-body {margin: 0;}
+.data a {
+text-decoration: none;
+text-transform: uppercase;
 
-ul {
-    list-style-type: none;
-    margin: 0;
+color: #fff;
+background-color:#333;
+text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+border:0.1em solid black;
+border-radius:0.12em;
+box-sizing: border-box;
+text-decoration:none;
+transition: all 0.15s;
+
+width: 100%;
+overflow: auto;
+display: block;
+padding: 10px;
+height: 100%;
+vertical-align: text-top;
+}
+
+.data a:hover {
+color:#000;
+border-color:#000;
+background-color: #ddd;
+
+}
+
+.columns {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+}
+
+.columns a {
+text-decoration: none;
+text-transform: uppercase;
+overflow: auto;
+padding: 10px;
+margin: 2px;
+
+color: #fff;
+background-color:#333;
+text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+border:0.1em solid black;
+border-radius:0.12em;
+box-sizing: border-box;
+text-decoration:none;
+transition: all 0.15s;
+
+}
+
+.columns a:hover {
+color:#000;
+border-color:#000;
+background-color: #ddd;
+}
+
+.single_log ul {
+padding: 0;
+}
+
+.single_log li {
+background-color: #ddd;
+margin-bottom: 5px;
+list-style: none;
+border-radius:0.50em;
+text-align: center;
+padding: 10px;
+}
+
+input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%;color:#000!important;background-color:#f1f1f1!important}
+textarea{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%;color:#000!important;background-color:#f1f1f1!important}
+
+.w3-border{border:1px solid #ccc!important}
+
+@media print {
+table {
+text-align: left;
+}
+
+.sidenav {
+display: none;
+}
+
+td a {
+display: none;
+}
+
+}
+
+@media screen and (max-width: 961px) {
+header {
+width: 100%;
+}
+
+main {
     padding: 0;
-    overflow: hidden;
-    background-color: #333;
+    width: 100%;
 }
 
-li {
-    float: left;
+.columns {
+display: grid;
+grid-template-columns: repeat(1, 1fr);
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
 }
 
-li a:hover:not(.active) {
-    background-color: #111;
+/* Add a black background color to the top navigation */
+.topnav {
+background-color: #333;
+overflow: hidden;
+width: 100%;
+left: 0;
+z-index:9999;
 }
 
-.active {
-    background-color: #4CAF50;
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+display: block;
+text-align: center;
+padding: 14px 16px;
+
+color: #fff;
+background-color:#333;
+text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+box-sizing: border-box;
+text-decoration:none;
+transition: all 0.15s;
+
 }
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+display: none;
+} 
+
+ /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 961px) {
+.topnav a:not(:first-child) {display: none;}
+.topnav a.icon {
+float: right;
+display: block;
+}
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 961px) {
+.topnav.responsive {position: relative;}
+.topnav.responsive a.icon {
+position: absolute;
+right: 0;
+top: 0;
+}
+.topnav.responsive a {
+float: none;
+display: block;
+text-align: left;
+}
+} 

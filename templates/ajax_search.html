@@ -1,0 +1,12 @@
+
+{% if counter < 1 %}
+<h1 class="header">Нема записи.</h1>
+{% elif counter < 2 %}
+<h1 class="header">{{ counter }} запис:</h1>
+{% else %}
+<h1 class="header">{{ counter }} записи:</h1>
+{% endif %}
+
+{% for name in data %}
+<div class="data"><a href="/logs/{{ name.id }}/" class="collection-item">{{ name.timestamp }} - {{ name.name }}</a></div>
+{% endfor %}

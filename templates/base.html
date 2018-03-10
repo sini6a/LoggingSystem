@@ -5,33 +5,44 @@
 <head>
     <title>Logging System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link async href="http://fonts.googleapis.com/css?family=Chau%20Philomene%20One" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-    
-    <ul class="sidenav">
-        <div class="header_main">
-        <h1 class="header">Logging System</h1>
-        {% if user.is_authenticated %}
-        <h2 class="header">Добредојде, {{ user.username }}!</h2>
+	
+    <header class="">
+		<div>
+	        <h1 class="anaglyph">Logging System</h1>
         </div>
-        <li><a href="/logs">Сите Записи</a></li>
-        <li><a href="/">Нов запис</a></li>
-        <li style="float:right;"><a href="/logout">Одјава</a></li>
-        {% else %}
-        <h2 class="header">Најавете се да ги користите услугите.</h2>
-        {% endif %}
-        {% if user.is_superuser %}
-        <li style="float:right;"><a href="/admin">Администраторски панел</a></li>
-        {% endif %}
-    </ul>
+        
+        <div class="topnav" id="myTopnav">
+	        {% if user.is_authenticated %}
+	        <a href="/logs">Сите Записи</a>
+	        <a href="/">Нов запис</a>
+	        <a href="/logout" style="float: right;">Одјава</a>
+	        {% else %}
+	        <a href="/about">Што е Logging System?</a>
+	        {% endif %}
+	        {% if user.is_superuser %}
+	        <a href="/admin" style="float: right;">Администраторски панел</a>
+	        <a href="javascript:void(0);" class="icon" onclick="meni()">&#9776;</a>
+	        {% endif %}
+
+        </div>
+    </header>
     
-    <div class="content">
+    <main>
         {% block content %}
         {% endblock %}
-    </div>
+    </main>
+	
+	<footer>
+	</footer>
 
+<script src="{% static 'js/menu.js' %}"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </body>
 
 </html>

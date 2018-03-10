@@ -3,34 +3,22 @@
 
 {% block content %}
 <h1 class="header">{{ data.name }}</h1>
-<table class="single_log">
-	<tr>
-		<td>ID:</td>
-		<td>{{ data.id }}</td>
-	</tr>
-	<tr>
-		<td>Дата:</td>
-		<td>{{ data.timestamp }}</td>
-	</tr>
-	<tr>
-		<td>Контакт телефон:</td>
-		<td>{{ data.contact }}</td>
-	</tr>
-	<tr>
-		<td>Производител:</td>
-		<td>{{ data.manufacturer }}</td>
-	</tr>
-	<tr>
-		<td>Модел</td>
-		<td>{{ data.model }}</td>
-	</tr>
-	<tr>
-		<td>Цена:</td>
-		<td>{{ data.price }}</td>
-	</tr>
-	<tr>
-		<td>Опис:</td>
-		<td>{{ data.description }}</td>
-	</tr>
-</table>
+
+<div class="single_log">
+<ul>
+<li>Дата: {{ data.timestamp }}</li>
+<li>Контакт телефон: {{ data.contact }}</li>
+<li>Производител: {{ data.manufacturer }}</li>
+<li>Модел: {{ data.model }}</li>
+<li>Цена: {{ data.price }}</li>
+<li>Опис: {{ data.description }}</li>
+</ul>
+</div>
+<div class="columns">
+<a href="" onclick="window.print();">Испечати</a>
+<a href="/logs/{{ data.id }}/delete">Избриши</a>
+<a href="/logs/{{ data.id }}/delete">Избриши</a>
+
+</div>
+
 {% endblock %}

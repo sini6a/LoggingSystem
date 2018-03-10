@@ -2,19 +2,19 @@
 {% load staticfiles %}
 
 {% block content %}
-<h1 class="header">Нов Запис:</h1>
-<form method="post">
+
+        <h1 class="header">Нов запис:</h1>
+        <form method="post" class="w3-container">
     {% csrf_token %}
-    <table class="single_log">
     {% for field in form %}
-    <tr>
-        <td style="width: 30%;">{{ field.label_tag }}</td>
-        <td style="width: 70%;">{{ field }}</td>
-    </tr>
+        <label>{{ field.label_tag }}</label>
+        {{ field }}
+        
+    {% if field.errors %}
+        {{ field.errors }}
+        {% endif %}
     {% endfor %}
-    <tr>
-        <td><input type="submit" value="Submit" /></td>
-    </tr>
-    </table>
+        <input type="submit" value="Submit" />
+
 </form>
 {% endblock %}
