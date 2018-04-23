@@ -142,9 +142,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = 'logs'
-LOGIN_URL = 'account:login'
-LOGOUT_URL = 'account:logout'
+LOGIN_REDIRECT_URL = 'logs:list_logs'
+LOGIN_URL = 'home:account_login'
+LOGOUT_URL = 'home:account_logout'
 
 
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
