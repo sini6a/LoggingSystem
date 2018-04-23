@@ -10,12 +10,12 @@ class DataForm(ModelForm):
         model = Data
         fields = ['name', 'contact', 'manufacturer', 'model', 'price', 'description']
         labels = {
-            'name': _('Регистарски таблици:'),
-            'contact': _('Контакт телефон:'),
-            'manufacturer': _('Производител:'),
-            'model': _('Модел:'),
-            'price': _('Цена:'),
-            'description': _('Опис:'),
+            'name': _('Customer Name:'),
+            'contact': _('Phone:'),
+            'manufacturer': _('Manufacturer:'),
+            'model': _('Model:'),
+            'price': _('Price:'),
+            'description': _('Description:'),
 
         }
 
@@ -24,17 +24,18 @@ class UserForm(ModelForm):
         model = User
         fields = ('first_name', 'last_name', 'email')
         labels = {
-            'first_name': _('Име:'),
-            'last_name': _('Презиме:'),
+            'first_name': _('First Name:'),
+            'last_name': _('Last Name:'),
             'email': _('E-Mail:'),
         }
 
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        fields = ['company_name', 'company_logo', 'about_company']
+        fields = ['language', 'company_name', 'company_logo', 'about_company']
         labels = {
-            'company_name': _('Име на компанијата:'),
-            'company_logo': _('Лого на компанијата:'),
-            'about_company': _('Опис на компанијата:'),
+            'language': _('Language:'),
+            'company_name': _('Company Name:'),
+            'company_logo': _('Logo:'),
+            'about_company': _('Description:'),
         }

@@ -69,7 +69,6 @@ background-color: #fff;
 }
 
 body {
-
     background: url("/static/images/preview.jpg");
     background-size: 50%;
 width: auto;
@@ -193,6 +192,7 @@ background-color: #ddd;
 @media print {
 body {
 background: none;
+margin: 0;
 }
 header {
 width: 100%;

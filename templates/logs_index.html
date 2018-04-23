@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block content %}
 
@@ -10,7 +11,7 @@
 var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
 </script>
 
-<h3 class="search">Пребарај:</h3>
+<h3 class="search">{% trans 'Search:' %}</h3>
 <input type="text" id="search" />
 
 <span class="logs_index">

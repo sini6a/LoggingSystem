@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block content %}
-<h3>Успешно се одјавивте.<br></h3>
+<h3>{% trans 'You successfully signed out.' %}<br></h3>
 <div class="data">
-<a href="/login">Најава</a>
+<a href="/login">{% trans 'LOG IN AGAIN' %}</a>
 </div>
 {% endblock %}

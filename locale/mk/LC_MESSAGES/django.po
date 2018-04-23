@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-28 20:11+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: LoggingSystem/settings.py:124
+msgid "English"
+msgstr "English"
+
+#: LoggingSystem/settings.py:125
+msgid "Македонски"
+msgstr "Македонски"
+
+#: LoggingSystem/settings.py:126
+msgid "Shqip"
+msgstr "Shqip"
+
+#: home/forms.py:13
+msgid "Customer Name:"
+msgstr "Име:"
+
+#: home/forms.py:14 logs/models.py:32
+msgid "Phone:"
+msgstr "Телефонски број:"
+
+#: home/forms.py:15 logs/models.py:33
+msgid "Manufacturer:"
+msgstr "Производител:"
+
+#: home/forms.py:16 logs/models.py:34
+msgid "Model:"
+msgstr "Модел:"
+
+#: home/forms.py:17 logs/models.py:35
+msgid "Price:"
+msgstr "Цена:"
+
+#: home/forms.py:18 home/forms.py:40 logs/models.py:36
+msgid "Description:"
+msgstr "Опис:"
+
+#: home/forms.py:27
+msgid "First Name:"
+msgstr "Име:"
+
+#: home/forms.py:28
+msgid "Last Name:"
+msgstr "Презиме:"
+
+#: home/forms.py:29
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+#: home/forms.py:37
+msgid "Language:"
+msgstr "Јазик:"
+
+#: home/forms.py:38
+msgid "Company Name:"
+msgstr "Име на компанија:"
+
+#: home/forms.py:39
+msgid "Logo:"
+msgstr "Лого:"
+
+#: home/views.py:74
+msgid "Your profile was successfully updated!"
+msgstr "Вашиот профил е успешно ажуриран!"
+
+#: home/views.py:77
+msgid "Please correct the error below."
+msgstr "Ве молиме корегирајте ги грешките подолу."
+
+#: logs/models.py:31
+msgid "Name:"
+msgstr "Име:"
+
+#: templates/ajax_search.html:4
+msgid "No Logs"
+msgstr "Нема записи"
+
+#: templates/ajax_search.html:6
+msgid " log:"
+msgstr " запис:"
+
+#: templates/ajax_search.html:8
+msgid " logs: "
+msgstr " записи:"
+
+#: templates/base.html:28
+msgid "List Logs"
+msgstr "Сите записи"
+
+#: templates/base.html:29
+msgid "New Log"
+msgstr "Нов запис"
+
+#: templates/base.html:30
+msgid "Logout"
+msgstr "Одјава"
+
+#: templates/base.html:33
+msgid "Admin Panel"
+msgstr "Админ панел"
+
+#: templates/base.html:36
+msgid "What is Logging System?"
+msgstr "Што е Logging System?"
+
+#: templates/deleted.html:6
+msgid "Log successfully deleted!"
+msgstr "Записот е успешно избришан!"
+
+#: templates/deleted.html:8 templates/submited.html:8
+msgid "LIST LOGS"
+msgstr "СИТЕ ЗАПИСИ"
+
+#: templates/index.html:7
+msgid "New Log:"
+msgstr "Нов запис:"
+
+#: templates/index.html:18
+msgid "SUBMIT"
+msgstr "ВНЕСИ"
+
+#: templates/logged_out.html:6
+msgid "You successfully signed out."
+msgstr "Успешно се одјавивте."
+
+#: templates/logged_out.html:8
+msgid "LOG IN AGAIN"
+msgstr "НАЈАВА"
+
+#: templates/login.html:6 templates/login.html:10
+msgid "Login"
+msgstr "Најава"
+
+#: templates/logs_index.html:14
+msgid "Search:"
+msgstr "Пребарај:"
+
+#: templates/profile_info.html:10
+msgid "Username: "
+msgstr "Корисничко име: "
+
+#: templates/profile_info.html:11
+msgid "Full Name: "
+msgstr "Име и презиме: "
+
+#: templates/profile_info.html:12
+msgid "Language: "
+msgstr "Јазик: "
+
+#: templates/profile_info.html:13
+msgid "Company Name: "
+msgstr "Име на компанија: "
+
+#: templates/profile_info.html:15
+msgid "Logo: "
+msgstr "Лого: "
+
+#: templates/profile_info.html:17
+msgid "Bio: "
+msgstr "Био: "
+
+#: templates/profile_info.html:23
+msgid "UPDATE"
+msgstr "АЖУРИРАЈ"
+
+#: templates/signup.html:5
+msgid "Registration:"
+msgstr "Регистрација: "
+
+#: templates/signup.html:17
+msgid "REGISTER"
+msgstr "РЕГИСТРИРАЈ СЕ"
+
+#: templates/single_log.html:10
+msgid "Date: "
+msgstr "Датум: "
+
+#: templates/single_log.html:11
+msgid "Phone: "
+msgstr "Телефонски број: "
+
+#: templates/single_log.html:12
+msgid "Manufacturer: "
+msgstr "Производител: "
+
+#: templates/single_log.html:13
+msgid "Model: "
+msgstr "Модел: "
+
+#: templates/single_log.html:14
+msgid "Price: "
+msgstr "Цена: "
+
+#: templates/single_log.html:15
+msgid "Description: "
+msgstr "Опис: "
+
+#: templates/single_log.html:19
+msgid "PRINT"
+msgstr "ИСПЕЧАТИ"
+
+#: templates/single_log.html:20
+msgid "DELETE"
+msgstr "ИЗБРИШИ"
+
+#: templates/submited.html:6
+msgid "Log successfully submited!"
+msgstr "Успешно внесен запис!"
+
+#: templates/update_profile.html:10
+msgid "SAVE CHANGES"
+msgstr "ЗАЧУВАЈ"

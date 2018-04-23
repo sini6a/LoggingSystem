@@ -1,21 +1,25 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block content %}
+{% get_language_info for user.profile.language as lang %}
+
 <div class="single_log">
 <ul>
-  <li>Nickname: {{ user.username }}</li>
-  <li>Корисник: {{ user.get_full_name }}</li>
-    <li>Име на фирма: {{ user.profile.company_name }}</li>
+  <li>{% trans 'Username: ' %}{{ user.username }}</li>
+  <li>{% trans 'Full Name: ' %}{{ user.get_full_name }}</li>
+    <li>{% trans 'Language: ' %}{{ lang.name_local }}</li>
+    <li>{% trans 'Company Name: ' %}{{ user.profile.company_name }}</li>
     {% if user.profile.company_logo %}
-    <li>Лого: <a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}">{{ user.profile.company_logo }}</a></li>
+    <li>{% trans 'Logo: ' %}<a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}">{{ user.profile.company_logo }}</a></li>
     {% endif %}
-    <li>Инфо: {{ user.profile.about_company }} </li>
+    <li>{% trans 'Bio: ' %}{{ user.profile.about_company }} </li>
 </ul>
 
 
 </div>
 <div class="columns">
-<a href="/update_profile">Ажурирај</a>
+<a href="/update_profile">{% trans 'UPDATE' %}</a>
 </div>
 {% endblock %}

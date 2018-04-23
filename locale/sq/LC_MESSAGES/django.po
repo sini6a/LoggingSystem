@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-28 11:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: LoggingSystem/settings.py:120
+msgid "English"
+msgstr "English"
+
+#: LoggingSystem/settings.py:121
+msgid "Македонски"
+msgstr "Македонски"
+
+#: LoggingSystem/settings.py:122
+msgid "Shqip"
+msgstr "Shqip"
+
+#: home/forms.py:13
+msgid "Customer Name:"
+msgstr "Emri:"
+
+#: home/forms.py:14 logs/models.py:32
+msgid "Phone:"
+msgstr "Numri i telefonit:"
+
+#: home/forms.py:15 logs/models.py:33
+msgid "Manufacturer:"
+msgstr "Производител:"
+
+#: home/forms.py:16 logs/models.py:34
+msgid "Model:"
+msgstr "Model:"
+
+#: home/forms.py:17 logs/models.py:35
+msgid "Price:"
+msgstr "Çmimi:"
+
+#: home/forms.py:18 home/forms.py:40 logs/models.py:36
+msgid "Description:"
+msgstr "Përshkrimi:"
+
+#: home/forms.py:27
+msgid "First Name:"
+msgstr "Emri:"
+
+#: home/forms.py:28
+msgid "Last Name:"
+msgstr "Mbiemri:"
+
+#: home/forms.py:29
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+#: home/forms.py:37
+msgid "Language:"
+msgstr "Gjuha:"
+
+#: home/forms.py:38
+msgid "Company Name:"
+msgstr "Emri i firmës:"
+
+#: home/forms.py:39
+msgid "Logo:"
+msgstr "Logo:"
+
+#: home/views.py:59
+msgid "Your profile was successfully updated!"
+msgstr "!"
+
+#: home/views.py:62
+msgid "Please correct the error below."
+msgstr "Ju lutem përmirsoni gabimet e mëparshme."
+
+#: logs/models.py:31
+msgid "Name:"
+msgstr "Emri:"
+
+#: templates/ajax_search.html:4
+msgid "No Logs"
+msgstr "Nuk ka regjistrime"
+
+#: templates/ajax_search.html:6
+msgid " log:"
+msgstr " regjistrim:"
+
+#: templates/ajax_search.html:8
+msgid " logs: "
+msgstr " regjistrime:"
+
+#: templates/base.html:28
+msgid "List Logs"
+msgstr "Të gjitha regjistrimet"
+
+#: templates/base.html:29
+msgid "New Log"
+msgstr "Regjistrim i ri"
+
+#: templates/base.html:30
+msgid "Logout"
+msgstr "Logout"
+
+#: templates/base.html:33
+msgid "Admin Panel"
+msgstr "Paneli i adminit"
+
+#: templates/base.html:36
+msgid "What is Logging System?"
+msgstr "Çka ësht Logging System?"
+
+#: templates/deleted.html:6
+msgid "Log successfully deleted!"
+msgstr "Regjistrimi është i fshirë!"
+
+#: templates/deleted.html:8 templates/submited.html:8
+msgid "LIST LOGS"
+msgstr "TË GJITHA REGJISTRIMET"
+
+#: templates/index.html:7
+msgid "New Log:"
+msgstr "Regjistrim i ri:"
+
+#: templates/index.html:18
+msgid "SUBMIT"
+msgstr "REGJISTRO"
+
+#: templates/logged_out.html:6
+msgid "You successfully signed out."
+msgstr "Успешно се одјавивте."
+
+#: templates/logged_out.html:8
+msgid "LOG IN AGAIN"
+msgstr "НАЈАВА"
+
+#: templates/login.html:6 templates/login.html:10
+msgid "Login"
+msgstr "Најава"
+
+#: templates/logs_index.html:14
+msgid "Search:"
+msgstr "Kërko:"
+
+#: templates/profile_info.html:8
+msgid "Username: "
+msgstr "Emri i përdoruesit: "
+
+#: templates/profile_info.html:9
+msgid "Full Name: "
+msgstr "Emri dhe mbiemri: "
+
+#: templates/profile_info.html:10
+msgid "Company Name: "
+msgstr "Emri i firmës: "
+
+#: templates/profile_info.html:12
+msgid "Logo: "
+msgstr "Logo: "
+
+#: templates/profile_info.html:14
+msgid "Bio: "
+msgstr "Bio: "
+
+#: templates/profile_info.html:20
+msgid "UPDATE"
+msgstr "АЖУРИРАЈ"
+
+#: templates/signup.html:5
+msgid "Registration:"
+msgstr "Regjistrohu: "
+
+#: templates/signup.html:17
+msgid "REGISTER"
+msgstr "REGJISTROHU"
+
+#: templates/single_log.html:26
+msgid "Date: "
+msgstr "Data: "
+
+#: templates/single_log.html:27
+msgid "Phone: "
+msgstr "Numri i telefonit: "
+
+#: templates/single_log.html:28
+msgid "Manufacturer: "
+msgstr "Производител: "
+
+#: templates/single_log.html:29
+msgid "Model: "
+msgstr "Model: "
+
+#: templates/single_log.html:30
+msgid "Price: "
+msgstr "Çmimi: "
+
+#: templates/single_log.html:31
+msgid "Description: "
+msgstr "Përshkrimi: "
+
+#: templates/single_log.html:35
+msgid "PRINT"
+msgstr "PRINTOJE"
+
+#: templates/single_log.html:36
+msgid "DELETE"
+msgstr "FSHIJE"
+
+#: templates/submited.html:6
+msgid "Log successfully submited!"
+msgstr "Regjistrimi është i regjistruar!"
+
+#: templates/update_profile.html:10
+msgid "SAVE CHANGES"
+msgstr "RUAJ"

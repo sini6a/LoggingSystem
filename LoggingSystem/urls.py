@@ -20,4 +20,5 @@ urlpatterns = [
 	url(r'^', include('home.urls', namespace='account')),
 	url(r'^admin/', admin.site.urls),
     url(r'^logs/', include('logs.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n'), name='set_language'),
 ]

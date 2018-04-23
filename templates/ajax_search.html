@@ -1,10 +1,11 @@
+{% load i18n %}
 
 {% if counter < 1 %}
-<h1 class="header">Нема записи.</h1>
+<h1 class="header">{% trans 'No Logs' %}</h1>
 {% elif counter < 2 %}
-<h1 class="header">{{ counter }} запис:</h1>
+<h1 class="header">{{ counter }}{% trans ' log:' %}</h1>
 {% else %}
-<h1 class="header">{{ counter }} записи:</h1>
+<h1 class="header">{{ counter }}{% trans ' logs: ' %}</h1>
 {% endif %}
 
 {% for name in data %}

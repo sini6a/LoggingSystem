@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load i18n %}
+
 {% block content %}
-<h3>Успешно внесен запис.</h3>
+<h3>{% trans 'Log successfully submited!' %}</h3>
 <div class="data">
-<a href="/logs">СИТЕ ЗАПИСИ</a>
+<a href="/logs">{% trans 'LIST LOGS' %}</a>
 </div>
 {% endblock %}

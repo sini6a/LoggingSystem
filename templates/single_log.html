@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load i18n %}
 
 {% block content %}
 <h1 class="header">{{ data.name }}</h1>
-
+    
 <div class="single_log">
 <ul>
-<li>Дата: {{ data.timestamp }}</li>
-<li>Контакт телефон: {{ data.contact }}</li>
-<li>Производител: {{ data.manufacturer }}</li>
-<li>Модел: {{ data.model }}</li>
-<li>Цена: {{ data.price }}</li>
-<li>Опис: {{ data.description }}</li>
+<li>{% trans 'Date: ' %}{{ data.timestamp }}</li>
+<li>{% trans 'Phone: ' %}{{ data.contact }}</li>
+<li>{% trans 'Manufacturer: ' %}{{ data.manufacturer }}</li>
+<li>{% trans 'Model: ' %}{{ data.model }}</li>
+<li>{% trans 'Price: ' %}{{ data.price }}</li>
+<li>{% trans 'Description: ' %}{{ data.description }}</li>
 </ul>
 </div>
 <div class="columns">
-<a href="" onclick="window.print();">Испечати</a>
-<a href="/logs/{{ data.id }}/delete">Избриши</a>
+<a href="" onclick="window.print();">{% trans 'PRINT' %}</a>
+<a href="/logs/{{ data.id }}/delete">{% trans 'DELETE' %}</a>
 </div>
 
 {% endblock %}

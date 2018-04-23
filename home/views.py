@@ -10,8 +10,19 @@ from django.db import transaction
 from .forms import *
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
+from django.utils import translation
+from .models import Profile
+from django.contrib.auth.signals import user_logged_in
+
 
 # Create your views here.
+def set_lang(sender, user, request, **kwargs):
+    user_language = Profile.objects.get(user_id=request.user).language
+    translation.activate(user_language)
+    request.session[translation.LANGUAGE_SESSION_KEY] = user_language
+
+user_logged_in.connect(set_lang)
+
 @login_required
 def index(request):
     template = loader.get_template('index.html')
@@ -49,11 +60,17 @@ def signup(request):
 @transaction.atomic
 def update_profile(request):
     if request.method == 'POST':
+        
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
+            
+            user_language = profile_form['language'].value()
+            translation.activate(user_language)
+            request.session[translation.LANGUAGE_SESSION_KEY] = user_language
+            
             messages.success(request, _('Your profile was successfully updated!'))
             return redirect('account:profile')
         else:
@@ -72,6 +89,7 @@ def update_profile(request):
 def profile(request):
     user = request.user
     user = User.objects.get(pk=user.id)
+
     context = {
         'user':user,
     }

@@ -1,0 +1,13 @@
+msgstr "Производител:"
+msgstr "Опис:"
+msgid "Your profile was successfully updated!"
+msgid "Logout"
+
+msgid "You successfully signed out."
+msgstr "Успешно се одјавивте."
+
+msgid "LOG IN AGAIN"
+msgstr "НАЈАВА"
+
+msgid "UPDATE"
+msgstr "АЖУРИРАЈ"
