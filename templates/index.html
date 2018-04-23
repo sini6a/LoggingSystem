@@ -3,5 +3,11 @@
 {% load i18n %}
 
 {% block content %}
-<h3>{% trans 'Welcome.' %}<br></h3>
+<h3>{% trans 'Welcome' %}, 
+{% if request.user.get_full_name %}
+{{ request.user.get_full_name }}
+{% else %}
+{{ request.user }}
+{% endif %}
+<br></h3>
 {% endblock %}
