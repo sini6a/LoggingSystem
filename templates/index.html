@@ -3,19 +3,5 @@
 {% load i18n %}
 
 {% block content %}
-
-        <h1 class="header">{% trans 'New Log:' %}</h1>
-        <form method="post" class="">
-    {% csrf_token %}
-    {% for field in form %}
-        <label>{{ field.label_tag }}</label>
-        {{ field }}
-        
-    {% if field.errors %}
-        {{ field.errors }}
-        {% endif %}
-    {% endfor %}
-        <button value="Submit">{% trans 'SUBMIT' %}</button>
-
-</form>
+<h3>{% trans 'Welcome.' %}<br></h3>
 {% endblock %}

@@ -8,12 +8,13 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    url(r'^$', views.index, name='homepage'),
-    url(r'^login/$', views_for_user.login, {'template_name': 'login.html'}, name='login'),
-    url(r'^logout/$', views_for_user.logout, {'template_name': 'logged_out.html'}, name='logout'),
+    url(r'^$', views.index, name='index'),
+    
+    url(r'^login/$', views_for_user.login, {'template_name': 'login.html'}, name='account_login'),
+    url(r'^logout/$', views_for_user.logout, {'template_name': 'logged_out.html'}, name='account_logout'),
     url(r'^logs/easteregg/$', views.signup),
-    url(r'^update_profile/$', views.update_profile, name='update_profile'),
-    url(r'^profile/$', views.profile, name='profile'),
+    url(r'^update_profile/$', views.update_profile, name='account_update'),
+    url(r'^profile/$', views.profile, name='account_info'),
 ]
 
 if settings.DEBUG:

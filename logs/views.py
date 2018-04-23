@@ -3,38 +3,49 @@ from django.http import HttpResponse
 
 from django.template import loader
 from .models import Data
-from .forms import SearchForm
+from .forms import SearchForm, DataForm
 from django.middleware.csrf import get_token
 from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
+def new_log(request):
+    user = request.user
+    if request.method == 'POST':
+        form = DataForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            data = form.save(commit=False)
+            data.data_owner = request.user
+            data = data.save()
+            return render(request, 'log_submited.html')
+    else:
+        form = DataForm()
+    context = {
+	'form':form,
+    }
+    return render(request, 'log_new.html', context)
+
 # View for Logs Index
 @login_required
-def index(request):
-    # data = Data.objects.order_by('-timestamp')
-    # data = Data.objects.filter(data_owner_id=request.user).order_by('-timestamp')
-    # template = loader.get_template('logs_index.html')
-
-    # return HttpResponse(template.render({'data':data}, request))
+def list_logs(request):
     return render(request, 'logs_index.html')
 
 # VIEW FOR SINGLE LOG
-def log(request, log_id):
+def single_log(request, log_id):
     data = Data.objects.get(pk=log_id)
-    template = loader.get_template('single_log.html')
 
     context = {
         'data': data,
     }
 
-    return HttpResponse(template.render(context, request))
-
+    return render(request, 'log_single.html', context)
+    
 # DELETE SINGLE LOG
 def delete(request, log_id):
     Data.objects.filter(pk=log_id).delete()
-    return render(request, 'deleted.html')
-
+    return render(request, 'log_deleted.html')
 
 # SEARCH
 def search(request):
@@ -56,4 +67,4 @@ def search(request):
         'counter': countData(data)
     }
 
-    return render(request, 'ajax_search.html', context)
+    return render(request, 'logs_ajax_search.html', context)

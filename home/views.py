@@ -1,17 +1,14 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 
-from django.template import loader
-from logs.models import DataForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
+from .models import Profile
 from .forms import *
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.utils import translation
-from .models import Profile
 from django.contrib.auth.signals import user_logged_in
 
 
@@ -23,24 +20,8 @@ def set_lang(sender, user, request, **kwargs):
 
 user_logged_in.connect(set_lang)
 
-@login_required
 def index(request):
-    template = loader.get_template('index.html')
-    user = request.user
-    if request.method == 'POST':
-        form = DataForm(request.POST)
-        if form.is_valid():
-            data = form.cleaned_data
-            data = form.save(commit=False)
-            data.data_owner = request.user
-            data = data.save()
-            return render(request, 'submited.html')
-    else:
-        form = DataForm()
-    context = {
-	'form':form,
-    }
-    return HttpResponse(template.render(context, request))
+    return render(request, 'index.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -51,10 +32,10 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('account:update_profile')
+            return redirect('home:account_update')
     else:
         form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'profile_signup.html', {'form': form})
 
 @login_required
 @transaction.atomic
@@ -72,7 +53,7 @@ def update_profile(request):
             request.session[translation.LANGUAGE_SESSION_KEY] = user_language
             
             messages.success(request, _('Your profile was successfully updated!'))
-            return redirect('account:profile')
+            return redirect('home:account_info')
         else:
             messages.error(request, _('Please correct the error below.'))
     else:
@@ -84,7 +65,7 @@ def update_profile(request):
         'profile_form': profile_form
     }
     
-    return render(request, 'update_profile.html', context)
+    return render(request, 'profile_update.html', context)
 
 def profile(request):
     user = request.user

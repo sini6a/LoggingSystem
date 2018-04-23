@@ -1,23 +1,8 @@
 from django.forms import ModelForm
-from logs.models import Data
+
 from .models import Profile
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-
-
-class DataForm(ModelForm):
-    class Meta:
-        model = Data
-        fields = ['name', 'contact', 'manufacturer', 'model', 'price', 'description']
-        labels = {
-            'name': _('Customer Name:'),
-            'contact': _('Phone:'),
-            'manufacturer': _('Manufacturer:'),
-            'model': _('Model:'),
-            'price': _('Price:'),
-            'description': _('Description:'),
-
-        }
 
 class UserForm(ModelForm):
     class Meta:

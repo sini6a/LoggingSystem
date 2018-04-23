@@ -5,6 +5,6 @@
 {% block content %}
 <h3>{% trans 'You successfully signed out.' %}<br></h3>
 <div class="data">
-<a href="/login">{% trans 'LOG IN AGAIN' %}</a>
+<a href="{% url 'home:account_login' %}">{% trans 'LOG IN AGAIN' %}</a>
 </div>
 {% endblock %}

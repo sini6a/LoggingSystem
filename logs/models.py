@@ -1,8 +1,6 @@
 from django.db import models
 
-from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
-from django.forms import ModelForm
 from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
@@ -22,16 +20,3 @@ class Data(models.Model):
 
         def __str__(self):
             return self.name
-
-class DataForm(ModelForm):
-        class Meta:
-                model = Data
-                exclude = ['data_owner', 'timestamp']
-                labels = {
-                        'name': _("Name:"),
-                        'contact': _("Phone:"),
-                        'manufacturer': _("Manufacturer:"),
-                        'model': _("Model:"),
-                        'price': _("Price:"),
-                        'description': _("Description:"),
-                }

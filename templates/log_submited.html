@@ -5,6 +5,6 @@
 {% block content %}
 <h3>{% trans 'Log successfully submited!' %}</h3>
 <div class="data">
-<a href="/logs">{% trans 'LIST LOGS' %}</a>
+<a href="{% url 'logs:list_logs' %}">{% trans 'LIST LOGS' %}</a>
 </div>
 {% endblock %}
