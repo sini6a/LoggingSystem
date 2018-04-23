@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^logs/easteregg/$', views.signup),
     url(r'^update_profile/$', views.update_profile, name='account_update'),
     url(r'^profile/$', views.profile, name='account_info'),
+    url(r'^about_us/$', views.about_us, name='about_us'),
 ]
 
 if settings.DEBUG:

@@ -33,7 +33,7 @@
 	        <a href="{% url 'admin' %}" style="float: right;">{% trans 'Admin Panel' %}</a>
 	        {% endif %}
 	        {% else %}
-	        <a href="">{% trans 'What is Logging System?' %}</a>
+	        <a href="{% url 'home:about_us' %}">{% trans 'What is Logging System?' %}</a>
 	        {% endif %}
             <a href="javascript:void(0);" class="icon" onclick="meni()">&#9776;</a>
 

@@ -23,6 +23,9 @@ user_logged_in.connect(set_lang)
 def index(request):
     return render(request, 'index.html')
 
+def about_us(request):
+    return render(request, 'about_us.html')
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
