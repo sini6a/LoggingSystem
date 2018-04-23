@@ -12,17 +12,16 @@
 </head>
 
 <body>
-	
+
     <header class="">
 		<div class="settings-link">
             {% if user.profile.company_logo %}
             <a href="{% url 'logs:list_logs' %}"><img class="logo" src="{{ MEDIA_URL }}{{ user.profile.company_logo }}" /></a>
             {% elif user.profile.company_name %}
-	        <h1 class="anaglyph" style="float: right; width: 50%;">Logging System</h1>
-            <h1 class="anaglyph" style="float: left; width: 50%;">{{ user.profile.company_name }}</h1>
+            <a href="{% url 'logs:list_logs' %}"><img class="logo" src="{{ MEDIA_URL }}header.png" /></a>
             {% endif %}
         </div>
-        
+
         <div class="topnav" id="myTopnav">
 	        {% if user.is_authenticated %}
 	        <a href="{% url 'logs:list_logs' %}">{% trans 'List Logs' %}</a>
@@ -30,7 +29,7 @@
 	        <a href="{% url 'home:account_logout' %}" style="float: right;">{% trans 'Logout' %}</a>
             <a href="{% url 'home:account_info' %}" style="float: right;">{{ user }}</a>
 	        {% if user.is_superuser %}
-	        <a href="{% url 'admin' %}" style="float: right;">{% trans 'Admin Panel' %}</a>
+	        <a href="/admin" style="float: right;">{% trans 'Admin Panel' %}</a>
 	        {% endif %}
 	        {% else %}
 	        <a href="{% url 'home:about_us' %}">{% trans 'What is Logging System?' %}</a>
@@ -40,12 +39,12 @@
 
         </div>
     </header>
-    
+
     <main>
         {% block content %}
         {% endblock %}
     </main>
-	
+
 	<footer>
 	</footer>
 
