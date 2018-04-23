@@ -34,7 +34,8 @@
 	        {% endif %}
 	        {% else %}
 	        <a href="{% url 'home:about_us' %}">{% trans 'What is Logging System?' %}</a>
-	        {% endif %}
+	        <a href="{% url 'home:account_login' %}" style="float: right;">{% trans 'Login' %}</a>
+		{% endif %}
             <a href="javascript:void(0);" class="icon" onclick="meni()">&#9776;</a>
 
         </div>
