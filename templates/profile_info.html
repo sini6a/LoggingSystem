@@ -7,14 +7,14 @@
 
 <div class="single_log">
 <ul>
-  <li>{% trans 'Username: ' %}{{ user.username }}</li>
-  <li>{% trans 'Full Name: ' %}{{ user.get_full_name }}</li>
-    <li>{% trans 'Language: ' %}{{ lang.name_local }}</li>
-    <li>{% trans 'Company Name: ' %}{{ user.profile.company_name }}</li>
+  <li>{% trans 'Username: ' %}<p>{{ user.username }}</p></li>
+  <li>{% trans 'Full Name: ' %}<p>{{ user.get_full_name }}</p></li>
+    <li>{% trans 'Language: ' %}<p>{{ lang.name_local }}</p></li>
+    <li>{% trans 'Company Name: ' %}<p>{{ user.profile.company_name }}</p></li>
     {% if user.profile.company_logo %}
-    <li>{% trans 'Logo: ' %}<a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}">{{ user.profile.company_logo }}</a></li>
+    <li>{% trans 'Logo: ' %}<a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}"><p>{{ user.profile.company_logo }}</p></a></li>
     {% endif %}
-    <li>{% trans 'Bio: ' %}{{ user.profile.about_company }} </li>
+    <li>{% trans 'Bio: ' %}<p>{{ user.profile.about_company }}</p></li>
 </ul>
 
 

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+
+        <h1 class="header">{% trans 'Modify existing log:' %}</h1>
+        <form method="post" class="">
+    {% csrf_token %}
+    {% for field in form %}
+        <label>{{ field.label_tag }}</label>
+        {{ field }}
+        
+    {% if field.errors %}
+        {{ field.errors }}
+        {% endif %}
+    {% endfor %}
+        <button value="Submit">{% trans 'UPDATE' %}</button>
+
+</form>
+{% endblock %}

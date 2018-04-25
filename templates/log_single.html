@@ -7,16 +7,17 @@
     
 <div class="single_log">
 <ul>
-<li>{% trans 'Date: ' %}{{ data.timestamp }}</li>
-<li>{% trans 'Phone: ' %}{{ data.contact }}</li>
-<li>{% trans 'Manufacturer: ' %}{{ data.manufacturer }}</li>
-<li>{% trans 'Model: ' %}{{ data.model }}</li>
-<li>{% trans 'Price: ' %}{{ data.price }}</li>
-<li>{% trans 'Description: ' %}{{ data.description }}</li>
+<li>{% trans 'Date: ' %}<p>{{ data.timestamp }}</p></li>
+<li>{% trans 'Phone: ' %}<p>{{ data.contact }}</p></li>
+<li>{% trans 'Manufacturer: ' %}<p>{{ data.manufacturer }}</p></li>
+<li>{% trans 'Model: ' %}<p>{{ data.model }}</p></li>
+<li>{% trans 'Price: ' %}<p>{{ data.price }}</p></li>
+<li>{% trans 'Description: ' %}<p>{{ data.description }}</p></li>
 </ul>
 </div>
 <div class="columns">
 <a href="" onclick="window.print();">{% trans 'PRINT' %}</a>
+<a href="/logs/{{ data.id }}/modify">{% trans 'MODIFY' %}</a>
 <a href="/logs/{{ data.id }}/delete">{% trans 'DELETE' %}</a>
 </div>
 

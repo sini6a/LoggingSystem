@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block content %}
+<h3>{% trans 'Log info successfully modified!' %}</h3>
+<div class="data">
+<a href="{% url 'logs:list_logs' %}">{% trans 'LIST LOGS' %}</a>
+</div>
+{% endblock %}
