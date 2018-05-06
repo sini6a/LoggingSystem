@@ -8,29 +8,29 @@
 <table>
 <tr>
     <td class="table_left">{% trans 'Username: ' %}</td>
-    <td>{{ user.username }}</td>
+    <td class="table_right">{{ user.username }}</td>
 </tr>
 <tr>
     <td class="table_left">{% trans 'Full Name: ' %}</td>
-    <td>{{ user.get_full_name }}</td>
+    <td class="table_right">{{ user.get_full_name }}</td>
 </tr>
 <tr>
     <td class="table_left">{% trans 'Language: ' %}</td>
-    <td>{{ lang.name_local }}</td>
+    <td class="table_right">{{ lang.name_local }}</td>
 </tr>
 <tr>
     <td class="table_left">{% trans 'Company Name: ' %}</td>
-    <td>{{ user.profile.company_name }}</td>
+    <td class="table_right">{{ user.profile.company_name }}</td>
 </tr>
 {% if user.profile.company_logo %}
 <tr>
     <td class="table_left">{% trans 'Logo: ' %}</td>
-    <td><a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}">{% trans 'Link' %}</a></td>
+    <td class="table_right"><a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}">{% trans 'Link' %}</a></td>
 </tr>
 {% endif %}
 <tr>
     <td class="table_left">{% trans 'Bio: ' %}</td>
-    <td>{{ user.profile.about_company }}</td>
+    <td class="table_right">{{ user.profile.about_company }}</td>
 </tr>
 </table>
 <div class="columns">
