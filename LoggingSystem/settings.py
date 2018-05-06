@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['localhost', 'sini6a.pythonanywhere.com']
 INSTALLED_APPS = [
 	'logs.apps.LogsConfig',
 	'home.apps.HomeConfig',
-	
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,16 +68,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
+
                 'django.template.context_processors.media',
             ],
         },
     },
-]
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
 ]
 
 WSGI_APPLICATION = 'LoggingSystem.wsgi.application'
@@ -141,6 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL = 'logs:list_logs'
 LOGIN_URL = 'home:account_login'
