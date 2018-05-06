@@ -57,6 +57,19 @@ h1, h2, h3 {
 
 .w3-light-green,.w3-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}
 
+table {
+width: 100%;
+border-top: dashed 1px gray;
+}
+table td {
+padding: 15px;
+border-bottom: dashed 1px gray;
+}
+.table_left {
+min-width: 33.33%;
+border-right: dashed 1px gray;
+}
+
 main {
 width: 80%;
 height: 100%;
@@ -113,6 +126,7 @@ background-color: #ddd;
 .columns {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
+text-align: center;
 }
 
 .columns a {
@@ -139,10 +153,6 @@ border-color:#000;
 background-color: #ddd;
 }
 
-.single_log ul {
-padding: 0;
-}
-
 .logo {
 display:block;
 margin: auto;
@@ -150,22 +160,6 @@ max-width: 100%;
 height: auto;
 max-height: 200px;
 padding: 10px;
-}
-
-.single_log li {
-border: 1px dotted;
-min-height: 120px;
-background-color: #f0f0f0;
-margin-bottom: 5px;
-list-style: none;
-text-align: left;
-padding: 10px;
-text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-}
-
-.single_log p {
-font-size: 20px;
-text-align: center;
 }
 
 input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%;color:#000!important;background-color:#f1f1f1!important}
@@ -228,10 +222,6 @@ box-shadow: none;
 display: none;
 }
 
-.single_log li {
-text-align: left;
-font-size: 20px;
-}
 }
 
 @media screen and (max-width: 961px) {
@@ -240,7 +230,7 @@ width: 100%;
 }
 
 main {
-    padding: 0;
+    padding: 5px;
     width: 100%;
 }
 
@@ -252,8 +242,15 @@ grid-template-columns: repeat(1, 1fr);
 button {
 width: 100%;
 }
-
+table tr {
+width: 100%;
 }
+table td {
+padding: 5px;
+}
+}
+
+
 
 /* Add a black background color to the top navigation */
 .topnav {

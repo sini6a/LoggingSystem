@@ -4,21 +4,35 @@
 
 {% block content %}
 {% get_language_info for user.profile.language as lang %}
-
-<div class="single_log">
-<ul>
-  <li>{% trans 'Username: ' %}<p>{{ user.username }}</p></li>
-  <li>{% trans 'Full Name: ' %}<p>{{ user.get_full_name }}</p></li>
-    <li>{% trans 'Language: ' %}<p>{{ lang.name_local }}</p></li>
-    <li>{% trans 'Company Name: ' %}<p>{{ user.profile.company_name }}</p></li>
-    {% if user.profile.company_logo %}
-    <li>{% trans 'Logo: ' %}<a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}"><p>{{ user.profile.company_logo }}</p></a></li>
-    {% endif %}
-    <li>{% trans 'Bio: ' %}<p>{{ user.profile.about_company }}</p></li>
-</ul>
-
-
-</div>
+<h1>{% trans 'Profile' %}</h1>
+<table>
+<tr>
+    <td class="table_left">{% trans 'Username: ' %}</td>
+    <td>{{ user.username }}</td>
+</tr>
+<tr>
+    <td class="table_left">{% trans 'Full Name: ' %}</td>
+    <td>{{ user.get_full_name }}</td>
+</tr>
+<tr>
+    <td class="table_left">{% trans 'Language: ' %}</td>
+    <td>{{ lang.name_local }}</td>
+</tr>
+<tr>
+    <td class="table_left">{% trans 'Company Name: ' %}</td>
+    <td>{{ user.profile.company_name }}</td>
+</tr>
+{% if user.profile.company_logo %}
+<tr>
+    <td class="table_left">{% trans 'Logo: ' %}</td>
+    <td><a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}">{% trans 'Link' %}</a></td>
+</tr>
+{% endif %}
+<tr>
+    <td class="table_left">{% trans 'Bio: ' %}</td>
+    <td>{{ user.profile.about_company }}</td>
+</tr>
+</table>
 <div class="columns">
 <a href="{% url 'home:account_update' %}">{% trans 'UPDATE' %}</a>
 </div>

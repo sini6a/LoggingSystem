@@ -5,16 +5,34 @@
 {% block content %}
 <h1 class="header">{{ data.name }}</h1>
     
-<div class="single_log">
-<ul>
-<li>{% trans 'Date: ' %}<p>{{ data.timestamp }}</p></li>
-<li>{% trans 'Phone: ' %}<p>{{ data.contact }}</p></li>
-<li>{% trans 'Manufacturer: ' %}<p>{{ data.manufacturer }}</p></li>
-<li>{% trans 'Model: ' %}<p>{{ data.model }}</p></li>
-<li>{% trans 'Price: ' %}<p>{{ data.price }}</p></li>
-<li>{% trans 'Description: ' %}<p>{{ data.description }}</p></li>
-</ul>
-</div>
+<table>
+<tr>
+    <td class="table_left">{% trans 'Date: ' %}</td>
+    <td class="table_right">{{ data.timestamp }}</td>
+</tr>
+<tr>
+    <td class="table_left">{% trans 'Phone: ' %}</td>
+    <td class="table_right">{{ data.contact }}</td>
+</tr>
+<tr>
+    <td class="table_left">{% trans 'Manufacturer: ' %}</td>
+    <td class="table_right">{{ data.manufacturer }}</td>
+</tr>
+<tr>
+    <td class="table_left">{% trans 'Model: ' %}</td>
+    <td class="table_right">{{ data.model }}</td>
+</tr>
+<tr>
+    <td class="table_left">{% trans 'Price: ' %}</td>
+    <td class="table_right">{{ data.price }}</td>
+</tr>
+<tr>
+    <td class="table_left">{% trans 'Description: ' %}</td>
+    <td class="table_right">{{ data.description }}</td>
+</tr>
+</table>
+    
+
 <div class="columns">
 <a href="" onclick="window.print();">{% trans 'PRINT' %}</a>
 <a href="/logs/{{ data.id }}/modify">{% trans 'MODIFY' %}</a>
