@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-from django.template import loader
 from .models import Data
 from .forms import SearchForm, DataForm
 from django.middleware.csrf import get_token
@@ -17,7 +15,6 @@ def check_owner(request, data):
 
 @login_required
 def new_log(request):
-    user = request.user
     if request.method == 'POST':
         form = DataForm(request.POST)
         if form.is_valid():
@@ -45,7 +42,7 @@ def single_log(request, log_id):
         data = Data.objects.get(pk=log_id)
     except:
         return render(request, 'log_error_not_found.html')
-        
+
     if check_owner(request, data):
         context = {
             'data': data,
@@ -53,7 +50,7 @@ def single_log(request, log_id):
         return render(request, 'log_single.html', context)
     else:
         return render(request, 'log_error_owner.html')
-    
+
 # DELETE SINGLE LOG
 @login_required
 def delete(request, log_id):
@@ -83,8 +80,6 @@ def modify(request, log_id):
     except:
         return render(request, 'log_error_not_found.html')
 
-    user = request.user
-    
     if check_owner(request, current_log):
         if request.method == 'POST':
             form = DataForm(request.POST, instance=current_log)
@@ -96,11 +91,11 @@ def modify(request, log_id):
                 return render(request, 'log_modified.html')
         else:
             form = DataForm(instance=current_log)
-        
+
         context = {
             'form':form,
         }
-        
+
         return render(request, 'log_modify.html', context)
     else:
         return render(request, 'log_error_owner.html')
@@ -118,9 +113,11 @@ def search(request):
         search_text = request.POST['search_text']
     else:
         search_text = ''
-        
+
     data = Data.objects.filter(data_owner_id=request.user, name__icontains=search_text).order_by('-timestamp')
 
+    if countData(data) == 0:
+        data = Data.objects.filter(data_owner_id=request.user, contact__icontains=search_text).order_by('-timestamp')
     context = {
         'data': data,
         'counter': countData(data)
