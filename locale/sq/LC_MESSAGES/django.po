@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-06 15:06+0000\n"
+"POT-Creation-Date: 2018-05-23 16:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: LoggingSystem/settings.py:124
+#: LoggingSystem/settings.py:119
 msgid "English"
 msgstr "English"
 
-#: LoggingSystem/settings.py:125
+#: LoggingSystem/settings.py:120
 msgid "Македонски"
 msgstr "Македонски"
 
-#: LoggingSystem/settings.py:126
+#: LoggingSystem/settings.py:121
 msgid "Shqip"
 msgstr "Shqip"
 
@@ -57,11 +57,11 @@ msgstr "Logo:"
 msgid "Description:"
 msgstr "Përshkrimi:"
 
-#: home/views.py:58
+#: home/views.py:83
 msgid "Your profile was successfully updated!"
 msgstr "Profili juaj u përditësua me sukses!"
 
-#: home/views.py:61
+#: home/views.py:86
 msgid "Please correct the error below."
 msgstr "Ju lutem përmirsoni gabimet e mëparshme."
 
@@ -85,27 +85,27 @@ msgstr "Model:"
 msgid "Price:"
 msgstr "Çmimi:"
 
-#: templates/base.html:27
+#: templates/base.html:28
 msgid "List Logs"
 msgstr "Të gjitha regjistrimet"
 
-#: templates/base.html:28
+#: templates/base.html:29
 msgid "New Log"
 msgstr "Regjistrim i ri"
 
-#: templates/base.html:29
+#: templates/base.html:30
 msgid "Logout"
 msgstr "Shkyçu"
 
-#: templates/base.html:32
+#: templates/base.html:33
 msgid "Admin Panel"
 msgstr "Paneli i adminit"
 
-#: templates/base.html:35
+#: templates/base.html:36
 msgid "What is Logging System?"
 msgstr "Çka ësht Logging System?"
 
-#: templates/base.html:36 templates/profile_login.html:6
+#: templates/base.html:37 templates/profile_login.html:6
 #: templates/profile_login.html:10
 msgid "Login"
 msgstr "Hyrje"
@@ -113,6 +113,42 @@ msgstr "Hyrje"
 #: templates/index.html:6
 msgid "Welcome"
 msgstr "Mirë se vjen"
+
+#: templates/index.html:13
+msgid "Statistics"
+msgstr ""
+
+#: templates/index.html:17
+msgid "Total Earned:"
+msgstr ""
+
+#: templates/index.html:25
+#, fuzzy
+#| msgid "No Logs"
+msgid "Total Logs:"
+msgstr "Nuk ka regjistrime"
+
+#: templates/index.html:33
+msgid "Date Joined:"
+msgstr ""
+
+#: templates/index.html:41
+msgid "Days Registered:"
+msgstr ""
+
+#: templates/index.html:50
+#, fuzzy
+#| msgid "Date: "
+msgid "Pay Date:"
+msgstr "Data: "
+
+#: templates/index.html:59
+msgid "DOWNLOAD DATA"
+msgstr ""
+
+#: templates/index.html:60
+msgid "ABOUT US & CONTACT"
+msgstr ""
 
 #: templates/log_delete_authentication.html:6
 msgid "Enter Password to continue:"
@@ -149,7 +185,7 @@ msgstr "Regjistrimi është i regjistruar!"
 msgid "Modify existing log:"
 msgstr "Ndrysho regjistrimin:"
 
-#: templates/log_modify.html:18 templates/profile_info.html:23
+#: templates/log_modify.html:18 templates/profile_info.html:37
 msgid "UPDATE"
 msgstr "PËRDITSO"
 
@@ -161,39 +197,39 @@ msgstr "Regjistrim i ri:"
 msgid "SUBMIT"
 msgstr "REGJISTRO"
 
-#: templates/log_single.html:11 templates/log_single.html:38
+#: templates/log_single.html:10
 msgid "Date: "
 msgstr "Data: "
 
-#: templates/log_single.html:15 templates/log_single.html:39
+#: templates/log_single.html:14
 msgid "Phone: "
 msgstr "Numri i telefonit: "
 
-#: templates/log_single.html:19 templates/log_single.html:40
+#: templates/log_single.html:18
 msgid "Manufacturer: "
 msgstr "Prodhues: "
 
-#: templates/log_single.html:23 templates/log_single.html:41
+#: templates/log_single.html:22
 msgid "Model: "
 msgstr "Model: "
 
-#: templates/log_single.html:27 templates/log_single.html:42
+#: templates/log_single.html:26
 msgid "Price: "
 msgstr "Çmimi: "
 
-#: templates/log_single.html:31 templates/log_single.html:43
+#: templates/log_single.html:30
 msgid "Description: "
 msgstr "Përshkrimi: "
 
-#: templates/log_single.html:47
+#: templates/log_single.html:37
 msgid "PRINT"
 msgstr "PRINTOJE"
 
-#: templates/log_single.html:48
+#: templates/log_single.html:38
 msgid "MODIFY"
 msgstr "NDRYSHOJE"
 
-#: templates/log_single.html:49
+#: templates/log_single.html:39
 msgid "DELETE"
 msgstr "FSHIJE"
 
@@ -217,27 +253,35 @@ msgstr " regjistrime:"
 msgid "Search:"
 msgstr "Kërko:"
 
+#: templates/profile_info.html:7
+msgid "Profile"
+msgstr ""
+
 #: templates/profile_info.html:10
 msgid "Username: "
 msgstr "Emri i përdoruesit: "
 
-#: templates/profile_info.html:11
+#: templates/profile_info.html:14
 msgid "Full Name: "
 msgstr "Emri dhe mbiemri: "
 
-#: templates/profile_info.html:12
+#: templates/profile_info.html:18
 msgid "Language: "
 msgstr "Gjuha: "
 
-#: templates/profile_info.html:13
+#: templates/profile_info.html:22
 msgid "Company Name: "
 msgstr "Emri i firmës: "
 
-#: templates/profile_info.html:15
+#: templates/profile_info.html:27
 msgid "Logo: "
 msgstr "Logo: "
 
-#: templates/profile_info.html:17
+#: templates/profile_info.html:28
+msgid "Link"
+msgstr ""
+
+#: templates/profile_info.html:32
 msgid "Bio: "
 msgstr "Bio: "
 

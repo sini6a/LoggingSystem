@@ -7,7 +7,6 @@
     <title>Logging System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
-    <link async href="http://fonts.googleapis.com/css?family=Chau%20Philomene%20One" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
@@ -16,9 +15,11 @@
     <header class="">
 		<div class="settings-link">
             {% if user.profile.company_logo %}
-            <a href="{% url 'logs:list_logs' %}"><img class="logo" src="{{ MEDIA_URL }}{{ user.profile.company_logo }}" /></a>
+            <a href="{% url 'home:index' %}"><img class="logo" src="{{ MEDIA_URL }}{{ user.profile.company_logo }}" /></a>
             {% elif user.profile.company_name %}
-            <a href="{% url 'logs:list_logs' %}"><img class="logo" src="{{ MEDIA_URL }}header.png" /></a>
+            <a href="{% url 'home:index' %}" class="logo" style="text-decoration: none;"><h1>{{ user.profile.company_name }}</h1></a>
+            {% else %}
+            <a href="{% url 'home:index' %}" class="logo" style="text-decoration: none;"><h1>Logging System</h1></a>
             {% endif %}
         </div>
 

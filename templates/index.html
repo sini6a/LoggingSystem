@@ -5,9 +5,58 @@
 {% block content %}
 <h3>{% trans 'Welcome' %}, 
 {% if request.user.get_full_name %}
-{{ request.user.get_full_name }}
+{{ request.user.get_full_name }}!
 {% else %}
-{{ request.user }}
+{{ request.user }}!
 {% endif %}
-<br></h3>
+</h3>
+<h1>{% trans 'Statistics' %}</h1>
+<table>
+    <tr>
+        <td class="table_left">
+            <label>{% trans 'Total Earned:' %}</label> 
+        </td>
+        <td class="table_right">
+            {{ total_price }}
+        </td>
+    </tr>
+    <tr>
+        <td class="table_left">
+            <label>{% trans 'Total Logs:' %}</label> 
+        </td>
+        <td class="table_right">
+            {{ total_data }}
+        </td>
+    </tr>
+    <tr>
+        <td class="table_left">
+            <label>{% trans 'Date Joined:' %}</label> 
+        </td>
+        <td class="table_right">
+            {{ date_joined }}
+        </td>
+    </tr>
+    <tr>
+        <td class="table_left">
+            <label>{% trans 'Days Registered:' %}</label> 
+        </td>
+        <td class="table_right">
+            {{ days_registered }}
+        </td>
+    </tr>
+<!--
+    <tr>
+        <td class="table_left">
+            <label>{% trans 'Pay Date:' %}</label> 
+        </td>
+        <td class="table_right">
+            {{ next_pay }}
+        </td>
+    </tr>
+-->
+</table>
+<div class="columns">
+<a href="{% url 'logs:backup_logs' %}">{% trans 'DOWNLOAD DATA' %}</a>
+<a href="{% url 'home:about_us' %}">{% trans 'ABOUT US & CONTACT' %}</a>
+</div>
 {% endblock %}

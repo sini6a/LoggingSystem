@@ -123,7 +123,7 @@ LANGUAGES = (
 
 LANGUAGE_CODE = 'mk'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Skopje'
 
 USE_I18N = True
 
@@ -135,10 +135,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
 
-LOGIN_REDIRECT_URL = 'logs:list_logs'
+STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGIN_REDIRECT_URL = 'home:index'
 LOGIN_URL = 'home:account_login'
 LOGOUT_URL = 'home:account_logout'
 

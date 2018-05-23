@@ -11,6 +11,10 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils import translation
 from django.contrib.auth.signals import user_logged_in
 
+from logs.models import Data
+from django.db.models import Sum
+
+from django.utils.timezone import now
 
 # Create your views here.
 def set_lang(sender, user, request, **kwargs):
@@ -20,8 +24,29 @@ def set_lang(sender, user, request, **kwargs):
 
 user_logged_in.connect(set_lang)
 
+@login_required
 def index(request):
-    return render(request, 'index.html')
+    # CALCULATE TOTAL EARNING
+    total_price = Data.objects.filter(data_owner_id=request.user).aggregate(Sum('price'))
+    
+    # CALCULATE TOTAL DATA
+    total_data = Data.objects.filter(data_owner_id=request.user).count()
+    
+    # TO DO
+    next_pay = 0
+    
+    # CALCULATE DAYS REGISTERED
+    days_registered = (now() - request.user.date_joined)
+    
+    context = {
+        'total_price': total_price['price__sum'],
+        'next_pay' : next_pay,
+        'days_registered': days_registered.days,
+        'date_joined': request.user.date_joined,
+        'total_data': total_data,
+    }
+    
+    return render(request, 'index.html', context)
 
 def about_us(request):
     return render(request, 'about_us.html')

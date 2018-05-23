@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-06 15:06+0000\n"
+"POT-Creation-Date: 2018-05-23 16:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: LoggingSystem/settings.py:124
+#: LoggingSystem/settings.py:119
 msgid "English"
 msgstr "English"
 
-#: LoggingSystem/settings.py:125
+#: LoggingSystem/settings.py:120
 msgid "Македонски"
 msgstr "Македонски"
 
-#: LoggingSystem/settings.py:126
+#: LoggingSystem/settings.py:121
 msgid "Shqip"
 msgstr "Shqip"
 
@@ -57,11 +57,11 @@ msgstr "Лого:"
 msgid "Description:"
 msgstr "Опис:"
 
-#: home/views.py:58
+#: home/views.py:83
 msgid "Your profile was successfully updated!"
 msgstr "Вашиот профил е успешно ажуриран!"
 
-#: home/views.py:61
+#: home/views.py:86
 msgid "Please correct the error below."
 msgstr "Ве молиме корегирајте ги грешките подолу."
 
@@ -85,27 +85,27 @@ msgstr "Модел:"
 msgid "Price:"
 msgstr "Цена:"
 
-#: templates/base.html:27
+#: templates/base.html:28
 msgid "List Logs"
 msgstr "Сите записи"
 
-#: templates/base.html:28
+#: templates/base.html:29
 msgid "New Log"
 msgstr "Нов запис"
 
-#: templates/base.html:29
+#: templates/base.html:30
 msgid "Logout"
 msgstr "Одјава"
 
-#: templates/base.html:32
+#: templates/base.html:33
 msgid "Admin Panel"
 msgstr "Админ панел"
 
-#: templates/base.html:35
+#: templates/base.html:36
 msgid "What is Logging System?"
 msgstr "Што е Logging System?"
 
-#: templates/base.html:36 templates/profile_login.html:6
+#: templates/base.html:37 templates/profile_login.html:6
 #: templates/profile_login.html:10
 msgid "Login"
 msgstr "Најава"
@@ -113,6 +113,38 @@ msgstr "Најава"
 #: templates/index.html:6
 msgid "Welcome"
 msgstr "Добредојде"
+
+#: templates/index.html:13
+msgid "Statistics"
+msgstr "Cтатистика"
+
+#: templates/index.html:17
+msgid "Total Earned:"
+msgstr "Вкупна заработка:"
+
+#: templates/index.html:25
+msgid "Total Logs:"
+msgstr "Вкупно записи:"
+
+#: templates/index.html:33
+msgid "Date Joined:"
+msgstr "Датум на регистрација:"
+
+#: templates/index.html:41
+msgid "Days Registered:"
+msgstr "Денови регистриран:"
+
+#: templates/index.html:50
+msgid "Pay Date:"
+msgstr "Датум за плаќање: "
+
+#: templates/index.html:59
+msgid "DOWNLOAD DATA"
+msgstr "ПРЕВЗЕМИ ЗАПИCИ"
+
+#: templates/index.html:60
+msgid "ABOUT US & CONTACT"
+msgstr "ЗА НАC & КОНТАКТ"
 
 #: templates/log_delete_authentication.html:6
 msgid "Enter Password to continue:"
@@ -149,7 +181,7 @@ msgstr "Записот е успешно изменет!"
 msgid "Modify existing log:"
 msgstr "Измени постоечки запис:"
 
-#: templates/log_modify.html:18 templates/profile_info.html:23
+#: templates/log_modify.html:18 templates/profile_info.html:37
 msgid "UPDATE"
 msgstr "АЖУРИРАЈ"
 
@@ -161,39 +193,39 @@ msgstr "Нов запис:"
 msgid "SUBMIT"
 msgstr "ВНЕСИ"
 
-#: templates/log_single.html:11 templates/log_single.html:38
+#: templates/log_single.html:10
 msgid "Date: "
 msgstr "Датум: "
 
-#: templates/log_single.html:15 templates/log_single.html:39
+#: templates/log_single.html:14
 msgid "Phone: "
 msgstr "Телефонски број: "
 
-#: templates/log_single.html:19 templates/log_single.html:40
+#: templates/log_single.html:18
 msgid "Manufacturer: "
 msgstr "Производител: "
 
-#: templates/log_single.html:23 templates/log_single.html:41
+#: templates/log_single.html:22
 msgid "Model: "
 msgstr "Модел: "
 
-#: templates/log_single.html:27 templates/log_single.html:42
+#: templates/log_single.html:26
 msgid "Price: "
 msgstr "Цена: "
 
-#: templates/log_single.html:31 templates/log_single.html:43
+#: templates/log_single.html:30
 msgid "Description: "
 msgstr "Опис: "
 
-#: templates/log_single.html:47
+#: templates/log_single.html:37
 msgid "PRINT"
 msgstr "ИСПЕЧАТИ"
 
-#: templates/log_single.html:48
+#: templates/log_single.html:38
 msgid "MODIFY"
 msgstr "ИЗМЕНИ"
 
-#: templates/log_single.html:49
+#: templates/log_single.html:39
 msgid "DELETE"
 msgstr "ИЗБРИШИ"
 
@@ -217,27 +249,35 @@ msgstr " записи:"
 msgid "Search:"
 msgstr "Пребарај:"
 
+#: templates/profile_info.html:7
+msgid "Profile"
+msgstr "Профил"
+
 #: templates/profile_info.html:10
 msgid "Username: "
 msgstr "Корисничко име: "
 
-#: templates/profile_info.html:11
+#: templates/profile_info.html:14
 msgid "Full Name: "
 msgstr "Име и презиме: "
 
-#: templates/profile_info.html:12
+#: templates/profile_info.html:18
 msgid "Language: "
 msgstr "Јазик: "
 
-#: templates/profile_info.html:13
+#: templates/profile_info.html:22
 msgid "Company Name: "
 msgstr "Име на компанија: "
 
-#: templates/profile_info.html:15
+#: templates/profile_info.html:27
 msgid "Logo: "
 msgstr "Лого: "
 
-#: templates/profile_info.html:17
+#: templates/profile_info.html:28
+msgid "Link"
+msgstr "Линк"
+
+#: templates/profile_info.html:32
 msgid "Bio: "
 msgstr "Био: "
 
@@ -251,7 +291,7 @@ msgstr "НАЈАВА"
 
 #: templates/profile_signup.html:5
 msgid "Registration:"
-msgstr "Регистрација: "
+msgstr "Регистрација:"
 
 #: templates/profile_signup.html:17
 msgid "REGISTER"

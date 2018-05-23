@@ -4,6 +4,13 @@ from .models import Data
 from .forms import SearchForm, DataForm
 from django.middleware.csrf import get_token
 from django.contrib.auth.decorators import login_required
+from django.db.models import Sum
+
+#For backup database
+from django.http import HttpResponse
+import csv
+from django.utils.encoding import smart_str
+from django.utils.timezone import now
 
 
 # Create your views here.
@@ -26,7 +33,7 @@ def new_log(request):
     else:
         form = DataForm()
     context = {
-	'form':form,
+    'form':form,
     }
     return render(request, 'log_new.html', context)
 
@@ -104,7 +111,7 @@ def modify(request, log_id):
 @login_required
 def search(request):
     data = Data.objects.filter(data_owner_id=request.user).order_by('-timestamp')
-
+    #data_total = Data.objects.filter(data_owner_id=request.user).count()
     def countData(data):
         counter = data.count()
         return counter
@@ -124,3 +131,37 @@ def search(request):
     }
 
     return render(request, 'logs_ajax_search.html', context)
+
+def backup(request):
+    response = HttpResponse(content_type='text/csv')
+    
+    fileName=request.user.username + "-backup-" + str(now().strftime("%d-%m-%Y"))
+    response['Content-Disposition'] = 'attachment; filename="%s.csv"' %fileName
+
+    writer = csv.writer(response, csv.excel)
+    response.write(u'\ufeff'.encode('utf8'))
+
+    writer.writerow([
+        smart_str(u"Date and Time"),
+        smart_str(u"Name"),
+        smart_str(u"Contact Phone"),
+        smart_str(u"Manufacturer"),
+        smart_str(u"Model"),
+        smart_str(u"Price"),
+        smart_str(u"Description"),
+    ])
+
+    data = Data.objects.filter(data_owner_id=request.user).order_by('-timestamp')
+    
+    for event in data:
+        writer.writerow([
+            smart_str(event.timestamp.strftime("%d/%m/%Y %H:%M")),
+            smart_str(event.name),
+            smart_str(event.contact),
+            smart_str(event.manufacturer),
+            smart_str(event.model),
+            smart_str(event.price),
+            smart_str(event.description),
+        ])
+    
+    return response
