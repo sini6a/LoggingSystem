@@ -9,5 +9,5 @@
 {% endif %}
 
 {% for name in data %}
-<div class="data"><a href="/logs/{{ name.id }}/" class="collection-item"><label>{{ name.contact }}</label> - <label>{{ name.name }}</label> <label style="float:right;">{{ name.timestamp }}</label></a></div>
+<div class="data"><a href="/logs/{{ name.id }}/" class="collection-item"><label>{{ name.name }}</label> <br><label>{{ name.contact }}</label> <label style="float:right;">{{ name.timestamp }}</label></a></div>
 {% endfor %}

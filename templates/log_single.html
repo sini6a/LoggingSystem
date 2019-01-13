@@ -4,34 +4,32 @@
 
 {% block content %}
 <h1 class="header">{{ data.name }}</h1>
-    
-<table>
-<tr>
-    <td class="table_left">{% trans 'Date: ' %}</td>
-    <td class="table_right">{{ data.timestamp }}</td>
-</tr>
-<tr>
-    <td class="table_left">{% trans 'Phone: ' %}</td>
-    <td class="table_right">{{ data.contact }}</td>
-</tr>
-<tr>
-    <td class="table_left">{% trans 'Manufacturer: ' %}</td>
-    <td class="table_right">{{ data.manufacturer }}</td>
-</tr>
-<tr>
-    <td class="table_left">{% trans 'Model: ' %}</td>
-    <td class="table_right">{{ data.model }}</td>
-</tr>
-<tr>
-    <td class="table_left">{% trans 'Price: ' %}</td>
-    <td class="table_right">{{ data.price }} мкд</td>
-</tr>
-<tr>
-    <td class="table_left">{% trans 'Description: ' %}</td>
-    <td class="table_right">{{ data.description }}</td>
-</tr>
-</table>
-    
+
+<div class="info" style="border-top: dashed 1px gray;">
+    <label>{% trans 'Date: ' %}</label>
+    <label class="value">{{ data.timestamp }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Phone: ' %}</label>
+    <label class="value">{{ data.contact }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Manufacturer: ' %}</label>
+    <label class="value">{{ data.manufacturer }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Model: ' %}</label>
+    <label class="value">{{ data.model }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Price: ' %}</label>
+    <label class="value">{{ data.price }} мкд</label>
+</div>
+<div class="info">
+    <label>{% trans 'Description: ' %}</label>
+    <label class="value">{{ data.description }}</label>
+</div>
+
 
 <div class="columns">
 <a href="" onclick="window.print();">{% trans 'PRINT' %}</a>

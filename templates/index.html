@@ -3,58 +3,33 @@
 {% load i18n %}
 
 {% block content %}
-<h3>{% trans 'Welcome' %}, 
+
+<h3>{% trans 'Welcome' %},
 {% if request.user.get_full_name %}
 {{ request.user.get_full_name }}!
 {% else %}
 {{ request.user }}!
 {% endif %}
 </h3>
+
 <h1>{% trans 'Statistics' %}</h1>
-<table>
-    <tr>
-        <td class="table_left">
-            <label>{% trans 'Total Earned:' %}</label> 
-        </td>
-        <td class="table_right">
-            {{ total_price }}
-        </td>
-    </tr>
-    <tr>
-        <td class="table_left">
-            <label>{% trans 'Total Logs:' %}</label> 
-        </td>
-        <td class="table_right">
-            {{ total_data }}
-        </td>
-    </tr>
-    <tr>
-        <td class="table_left">
-            <label>{% trans 'Date Joined:' %}</label> 
-        </td>
-        <td class="table_right">
-            {{ date_joined }}
-        </td>
-    </tr>
-    <tr>
-        <td class="table_left">
-            <label>{% trans 'Days Registered:' %}</label> 
-        </td>
-        <td class="table_right">
-            {{ days_registered }}
-        </td>
-    </tr>
-<!--
-    <tr>
-        <td class="table_left">
-            <label>{% trans 'Pay Date:' %}</label> 
-        </td>
-        <td class="table_right">
-            {{ next_pay }}
-        </td>
-    </tr>
--->
-</table>
+<div class="info" style="border-top: dashed 1px gray;">
+    <label>{% trans 'Total Income:' %}</label>
+    <label class="value">{{ total_price }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Total Logs:' %}</label>
+    <label class="value">{{ total_data }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Date Joined:' %}</label>
+    <label class="value">{{ date_joined }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Days Registered:' %}</label>
+    <label class="value">{{ days_registered }}</label>
+</div>
+
 <div class="columns">
 <a href="{% url 'logs:backup_logs' %}">{% trans 'DOWNLOAD DATA' %}</a>
 <a href="{% url 'home:about_us' %}">{% trans 'ABOUT US & CONTACT' %}</a>

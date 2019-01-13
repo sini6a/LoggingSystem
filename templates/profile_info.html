@@ -5,34 +5,33 @@
 {% block content %}
 {% get_language_info for user.profile.language as lang %}
 <h1>{% trans 'Profile' %}</h1>
-<table>
-<tr>
-    <td class="table_left">{% trans 'Username: ' %}</td>
-    <td class="table_right">{{ user.username }}</td>
-</tr>
-<tr>
-    <td class="table_left">{% trans 'Full Name: ' %}</td>
-    <td class="table_right">{{ user.get_full_name }}</td>
-</tr>
-<tr>
-    <td class="table_left">{% trans 'Language: ' %}</td>
-    <td class="table_right">{{ lang.name_local }}</td>
-</tr>
-<tr>
-    <td class="table_left">{% trans 'Company Name: ' %}</td>
-    <td class="table_right">{{ user.profile.company_name }}</td>
-</tr>
+<div class="info" style="border-top: dashed 1px gray;">
+    <label>{% trans 'Username: ' %}</label>
+    <label class="value">{{ user.username }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Full Name: ' %}</label>
+    <label class="value">{{ user.get_full_name }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Language: ' %}</label>
+    <label class="value">{{ lang.name_local }}</label>
+</div>
+<div class="info">
+    <label>{% trans 'Company Name: ' %}</label>
+    <label class="value">{{ user.profile.company_name }}</label>
+</div>
 {% if user.profile.company_logo %}
-<tr>
-    <td class="table_left">{% trans 'Logo: ' %}</td>
-    <td class="table_right"><a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}">{% trans 'Link' %}</a></td>
-</tr>
+<div class="info">
+    <label>{% trans 'Logo: ' %}</label>
+    <label class="value"><a href="{{ MEDIA_URL }}{{ user.profile.company_logo }}">{% trans 'Link' %}</a></label>
+</div>
 {% endif %}
-<tr>
-    <td class="table_left">{% trans 'Bio: ' %}</td>
-    <td class="table_right">{{ user.profile.about_company }}</td>
-</tr>
-</table>
+<div class="info">
+    <label>{% trans 'Bio: ' %}</label>
+    <label class="value">{{ user.profile.about_company }}</label>
+</div>
+
 <div class="columns">
 <a href="{% url 'home:account_update' %}">{% trans 'UPDATE' %}</a>
 </div>

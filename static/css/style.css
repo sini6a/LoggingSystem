@@ -1,5 +1,5 @@
  @import url('https://fonts.googleapis.com/css?family=Play');
-   
+
  * {
     font-family: 'Play', sans-serif;
 
@@ -34,7 +34,7 @@ header {
     display:block;
     overflow: auto;
 
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
@@ -59,26 +59,29 @@ h1, h2, h3 {
 
 .w3-light-green,.w3-hover-light-green:hover{color:#000!important;background-color:#8bc34a!important}
 
-table {
-width: 100%;
-border-top: dashed 1px gray;
+.info {
+    width: 100%;
+    border-bottom: dashed 1px gray;
+    overflow:auto;
 }
-table td {
-padding: 15px;
-border-bottom: dashed 1px gray;
+.info label {
+    width: 33.33%;
+    float: left;
+    text-align:center;
+    padding: 5px;
+    font-size: 18px;
+display:block;
+    border-right: dashed 1px gray;
+
 }
-.table_left {
-min-width: 33.33%;
-border-right: dashed 1px gray;
-text-align: right;
-}
-.table_right {
-    font-size: 20px;
-    text-transform: uppercase;
+.info .value {
+    border-right:none;
+text-align:left;
+    width: 66.67%;
 }
 
 main {
-width: 80%;
+width: 100%;
 height: 100%;
 margin: 0 auto;
 margin-top: 15px;
@@ -227,20 +230,24 @@ box-shadow: none;
 .columns {
 display: none;
 }
-table {
-border-top: 0;
+
+.info {
+    width: 100%;
+    border-bottom: none;
+    overflow:auto;
+    padding: 10px;
 }
-table td {
-padding: 15px;
-border-bottom: 0;
+.info label {
+    width: 33.33%;
+    float: left;
+    text-align:left;
+    paddng: 15px;
+    font-size: 18px;
+
 }
-.table_left {
-min-width: 33.33%;
-border-right: 0;
-text-align: left;
-}
-.table_right {
-    font-size: 14px;
+.info .value {
+    width: 66.67%;
+    border-left: none;
 }
 }
 
@@ -262,11 +269,8 @@ grid-template-columns: repeat(1, 1fr);
 button {
 width: 100%;
 }
-table tr {
-width: 100%;
-}
-table td {
-}
+
+
 
 }
 
