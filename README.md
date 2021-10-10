@@ -39,6 +39,16 @@ Install *Logging System* dependencies.
 pip install -r requirements.txt
 ```
 
+Running migrations will create database file named db.sqlite3 (**good for development but not production**).
+```bash
+python manage.py migrate
+```
+
+Create admin user.
+```bash
+python manage.py createsuperuser
+```
+
 ## Usage
 
 Start the local development server.
