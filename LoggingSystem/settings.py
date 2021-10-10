@@ -16,7 +16,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+print("BaseDir: ", BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -27,7 +27,7 @@ SECRET_KEY = 'x03#jh)ou=enb744r1w5kzej7s7^_8t)&k_k5+fnyqy=2%tzoi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'sini6a.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -135,13 +135,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, "static"),
-#    '/var/www/static/',
-#]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL = 'home:index'
 LOGIN_URL = 'home:account_login'
